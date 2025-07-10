@@ -1,4 +1,4 @@
-# IICS Projects and Interview Prep
+# IICS Projects 
 
 This repository contains hands-on Informatica Intelligent Cloud Services (IICS) solutions and reference notes to prepare for intermediate to advanced data engineering interviews.
 
