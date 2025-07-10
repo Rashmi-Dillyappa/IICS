@@ -1,0 +1,25 @@
+#!/bin/bash
+
+input_file="$1"
+
+# Function to check if line contains 'CustomerID'
+check_header_line() {
+  grep -q "CustomerID" <<< "$1"
+  return $?
+}
+
+header_count=0
+
+# Read first line
+read -r first_line < "$input_file"
+
+if check_header_line "$first_line"; then
+  ((header_count++))
+  # Read second line if exists
+  second_line=$(sed -n '2p' "$input_file")
+  if check_header_line "$second_line"; then
+    ((header_count++))
+  fi
+fi
+
+echo $header_count
